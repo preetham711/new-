@@ -46,7 +46,7 @@ export default function Skills() {
     <section
       id="skills"
       ref={ref}
-      className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-950"
+      className="py-12 xs:py-16 sm:py-20 px-3 xs:px-4 sm:px-6 lg:px-8 bg-slate-950"
     >
       <div className="max-w-6xl mx-auto">
         <motion.div
@@ -55,17 +55,17 @@ export default function Skills() {
           animate={inView ? 'visible' : 'hidden'}
         >
           {/* Section Title */}
-          <motion.div variants={itemVariants} className="text-center mb-16">
-            <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
+          <motion.div variants={itemVariants} className="text-center mb-8 xs:mb-12 sm:mb-16">
+            <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-2 xs:mb-3 sm:mb-4">
               Skills & Expertise
             </h2>
-            <p className="text-slate-400 text-lg max-w-2xl mx-auto">
+            <p className="text-slate-400 text-xs xs:text-sm sm:text-base md:text-lg max-w-2xl mx-auto px-2">
               A comprehensive toolkit for creating exceptional digital experiences
             </p>
           </motion.div>
 
           {/* Skills Grid */}
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid xs:grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 xs:gap-6 sm:gap-8">
             {skillCategories.map((category, idx) => {
               const IconComponent = category.icon
               return (
@@ -73,26 +73,26 @@ export default function Skills() {
                   key={idx}
                   variants={itemVariants}
                   whileHover={{ y: -10 }}
-                  className="glass rounded-2xl p-8 hover:shadow-lg transition-all"
+                  className="glass rounded-xl xs:rounded-2xl p-4 xs:p-6 sm:p-8 hover:shadow-lg transition-all"
                 >
-                  <div className="flex items-center gap-3 mb-6">
-                    <div className="p-3 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-lg">
-                      <IconComponent className="w-6 h-6 text-primary dark:text-secondary" />
+                  <div className="flex items-center gap-2 xs:gap-3 mb-4 xs:mb-6">
+                    <div className="p-2 xs:p-3 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-lg">
+                      <IconComponent className="w-5 xs:w-6 h-5 xs:h-6 text-primary dark:text-secondary" />
                     </div>
-                    <h3 className="text-xl font-bold text-white">
+                    <h3 className="text-base xs:text-lg sm:text-xl font-bold text-white">
                       {category.title}
                     </h3>
                   </div>
 
-                  <div className="space-y-3">
+                  <div className="space-y-2 xs:space-y-3">
                     {category.skills.map((skill, i) => (
                       <motion.div
                         key={i}
                         whileHover={{ x: 5 }}
-                        className="flex items-center gap-3 p-3 bg-slate-900 rounded-lg hover:bg-primary/10 transition-colors"
+                        className="flex items-center gap-2 xs:gap-3 p-2 xs:p-3 bg-slate-900 rounded-lg hover:bg-primary/10 transition-colors"
                       >
-                        <div className="w-2 h-2 rounded-full bg-gradient-to-r from-primary to-secondary"></div>
-                        <span className="text-sm font-medium text-white">
+                        <div className="w-1.5 xs:w-2 h-1.5 xs:h-2 rounded-full bg-gradient-to-r from-primary to-secondary flex-shrink-0"></div>
+                        <span className="text-xs xs:text-sm font-medium text-white">
                           {skill}
                         </span>
                       </motion.div>
@@ -104,11 +104,11 @@ export default function Skills() {
           </div>
 
           {/* Proficiency Bars */}
-          <motion.div variants={itemVariants} className="mt-16">
-            <h3 className="text-2xl font-bold text-white mb-8">
+          <motion.div variants={itemVariants} className="mt-8 xs:mt-12 sm:mt-16">
+            <h3 className="text-lg xs:text-xl sm:text-2xl font-bold text-white mb-4 xs:mb-6 sm:mb-8">
               Proficiency Levels
             </h3>
-            <div className="space-y-6">
+            <div className="space-y-4 xs:space-y-5 sm:space-y-6">
               {[
                 { skill: 'UI/UX Design', level: 95 },
                 { skill: 'Figma', level: 90 },
@@ -117,15 +117,15 @@ export default function Skills() {
                 { skill: 'Frontend Development', level: 75 },
               ].map((item, idx) => (
                 <motion.div key={idx} variants={itemVariants}>
-                  <div className="flex justify-between mb-2">
-                    <span className="font-medium text-white">
+                  <div className="flex justify-between mb-1 xs:mb-2">
+                    <span className="font-medium text-white text-xs xs:text-sm sm:text-base">
                       {item.skill}
                     </span>
-                    <span className="text-secondary font-semibold">
+                    <span className="text-secondary font-semibold text-xs xs:text-sm">
                       {item.level}%
                     </span>
                   </div>
-                  <div className="w-full bg-slate-800 rounded-full h-2 overflow-hidden">
+                  <div className="w-full bg-slate-800 rounded-full h-1.5 xs:h-2 overflow-hidden">
                     <motion.div
                       initial={{ width: 0 }}
                       animate={inView ? { width: `${item.level}%` } : { width: 0 }}

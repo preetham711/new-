@@ -59,7 +59,7 @@ export default function Experience() {
     <section
       id="experience"
       ref={ref}
-      className="py-20 px-4 sm:px-6 lg:px-8 bg-black"
+      className="py-12 xs:py-16 sm:py-20 px-3 xs:px-4 sm:px-6 lg:px-8 bg-black"
     >
       <div className="max-w-4xl mx-auto">
         <motion.div
@@ -68,11 +68,11 @@ export default function Experience() {
           animate={inView ? 'visible' : 'hidden'}
         >
           {/* Section Title */}
-          <motion.div variants={itemVariants} className="text-center mb-16">
-            <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
+          <motion.div variants={itemVariants} className="text-center mb-8 xs:mb-12 sm:mb-16">
+            <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-2 xs:mb-3 sm:mb-4">
               Professional Experience
             </h2>
-            <p className="text-slate-400 text-lg max-w-2xl mx-auto">
+            <p className="text-slate-400 text-xs xs:text-sm sm:text-base md:text-lg max-w-2xl mx-auto px-2">
               My journey in design and product development
             </p>
           </motion.div>
@@ -83,7 +83,7 @@ export default function Experience() {
             <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-primary via-secondary to-primary"></div>
 
             {/* Experience Items */}
-            <motion.div variants={containerVariants} className="space-y-12">
+            <motion.div variants={containerVariants} className="space-y-6 xs:space-y-8 sm:space-y-12">
               {experiences.map((exp, idx) => (
                 <motion.div
                   key={idx}
@@ -101,43 +101,43 @@ export default function Experience() {
                   {/* Content */}
                   <motion.div
                     whileHover={{ y: -5 }}
-                    className="md:w-1/2 glass rounded-2xl p-8 hover:shadow-lg transition-all"
+                    className="md:w-1/2 glass rounded-xl xs:rounded-2xl p-4 xs:p-6 sm:p-8 hover:shadow-lg transition-all"
                   >
                     {/* Header */}
-                    <div className="flex items-start gap-3 mb-4">
-                      <div className="p-3 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-lg">
-                        <FiBriefcase className="w-5 h-5 text-primary dark:text-secondary" />
+                    <div className="flex items-start gap-2 xs:gap-3 mb-3 xs:mb-4">
+                      <div className="p-2 xs:p-3 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-lg flex-shrink-0">
+                        <FiBriefcase className="w-4 xs:w-5 h-4 xs:h-5 text-primary dark:text-secondary" />
                       </div>
-                      <div className="flex-1">
-                        <h3 className="text-xl font-bold text-white">
+                      <div className="flex-1 min-w-0">
+                        <h3 className="text-base xs:text-lg sm:text-xl font-bold text-white break-words">
                           {exp.role}
                         </h3>
-                        <p className="text-secondary font-semibold">
+                        <p className="text-secondary font-semibold text-xs xs:text-sm">
                           {exp.company}
                         </p>
                       </div>
                     </div>
 
                     {/* Period */}
-                    <div className="flex items-center gap-2 text-slate-400 text-sm mb-4">
-                      <FiCalendar className="w-4 h-4" />
+                    <div className="flex items-center gap-2 text-slate-400 text-xs xs:text-sm mb-3 xs:mb-4">
+                      <FiCalendar className="w-3 xs:w-4 h-3 xs:h-4 flex-shrink-0" />
                       {exp.period}
                     </div>
 
                     {/* Description */}
-                    <p className="text-slate-400 mb-4">
+                    <p className="text-slate-400 text-xs xs:text-sm mb-3 xs:mb-4">
                       {exp.description}
                     </p>
 
                     {/* Achievements */}
-                    <div className="space-y-2">
+                    <div className="space-y-1.5 xs:space-y-2">
                       {exp.achievements.map((achievement, i) => (
                         <div
                           key={i}
-                          className="flex items-center gap-2 text-sm text-white"
+                          className="flex items-start gap-2 text-xs xs:text-sm text-white"
                         >
-                          <div className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-primary to-secondary"></div>
-                          {achievement}
+                          <div className="w-1 xs:w-1.5 h-1 xs:h-1.5 rounded-full bg-gradient-to-r from-primary to-secondary flex-shrink-0 mt-1.5"></div>
+                          <span>{achievement}</span>
                         </div>
                       ))}
                     </div>

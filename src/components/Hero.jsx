@@ -47,7 +47,7 @@ export default function Hero() {
         {/* Main Heading */}
         <motion.h1
           variants={itemVariants}
-          className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 text-white leading-tight"
+          className="text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-4 sm:mb-6 text-white leading-tight px-2"
         >
           Hi, I'm <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Preetham</span>
         </motion.h1>
@@ -55,7 +55,7 @@ export default function Hero() {
         {/* Subheading */}
         <motion.h2
           variants={itemVariants}
-          className="text-2xl sm:text-3xl font-semibold text-slate-300 mb-6"
+          className="text-xl xs:text-2xl sm:text-3xl md:text-4xl font-semibold text-slate-300 mb-4 sm:mb-6 px-2"
         >
           UI/UX Designer & Product Designer
         </motion.h2>
@@ -63,7 +63,7 @@ export default function Hero() {
         {/* Description */}
         <motion.p
           variants={itemVariants}
-          className="text-lg text-slate-400 mb-8 max-w-2xl mx-auto leading-relaxed"
+          className="text-base xs:text-lg sm:text-xl text-slate-400 mb-6 sm:mb-8 max-w-2xl mx-auto leading-relaxed px-4"
         >
           I craft beautiful, intuitive digital experiences that solve real problems. Specializing in user-centered design, design systems, and modern product interfaces.
         </motion.p>

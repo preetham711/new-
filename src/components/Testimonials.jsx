@@ -63,7 +63,7 @@ export default function Testimonials() {
     <section
       id="testimonials"
       ref={ref}
-      className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-950"
+      className="py-12 xs:py-16 sm:py-20 px-3 xs:px-4 sm:px-6 lg:px-8 bg-slate-950"
     >
       <div className="max-w-6xl mx-auto">
         <motion.div
@@ -72,11 +72,11 @@ export default function Testimonials() {
           animate={inView ? 'visible' : 'hidden'}
         >
           {/* Section Title */}
-          <motion.div variants={itemVariants} className="text-center mb-16">
-            <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
+          <motion.div variants={itemVariants} className="text-center mb-8 xs:mb-12 sm:mb-16">
+            <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-2 xs:mb-3 sm:mb-4">
               Client Testimonials
             </h2>
-            <p className="text-slate-400 text-lg max-w-2xl mx-auto">
+            <p className="text-slate-400 text-xs xs:text-sm sm:text-base md:text-lg max-w-2xl mx-auto px-2">
               What clients and collaborators say about working with me
             </p>
           </motion.div>
@@ -84,40 +84,40 @@ export default function Testimonials() {
           {/* Testimonials Grid */}
           <motion.div
             variants={containerVariants}
-            className="grid md:grid-cols-2 gap-8"
+            className="grid xs:grid-cols-1 sm:grid-cols-2 gap-4 xs:gap-6 sm:gap-8"
           >
             {testimonials.map((testimonial, idx) => (
               <motion.div
                 key={idx}
                 variants={itemVariants}
                 whileHover={{ y: -10 }}
-                className="glass rounded-2xl p-8 hover:shadow-lg transition-all"
+                className="glass rounded-xl xs:rounded-2xl p-4 xs:p-6 sm:p-8 hover:shadow-lg transition-all"
               >
                 {/* Stars */}
-                <div className="flex gap-1 mb-4">
+                <div className="flex gap-0.5 xs:gap-1 mb-3 xs:mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
                     <FiStar
                       key={i}
-                      className="w-5 h-5 fill-yellow-400 text-yellow-400"
+                      className="w-3.5 xs:w-4 sm:w-5 h-3.5 xs:h-4 sm:h-5 fill-yellow-400 text-yellow-400"
                     />
                   ))}
                 </div>
 
                 {/* Review Text */}
-                <p className="text-slate-400 mb-6 leading-relaxed italic">
+                <p className="text-slate-400 mb-4 xs:mb-5 sm:mb-6 leading-relaxed italic text-xs xs:text-sm sm:text-base">
                   "{testimonial.review}"
                 </p>
 
                 {/* Author */}
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-r from-primary/20 to-secondary/20 flex items-center justify-center text-2xl">
+                <div className="flex items-center gap-3 xs:gap-4">
+                  <div className="w-10 xs:w-12 h-10 xs:h-12 rounded-full bg-gradient-to-r from-primary/20 to-secondary/20 flex items-center justify-center text-lg xs:text-xl flex-shrink-0">
                     {testimonial.image}
                   </div>
-                  <div>
-                    <h4 className="font-bold text-white">
+                  <div className="min-w-0">
+                    <h4 className="font-bold text-white text-sm xs:text-base truncate">
                       {testimonial.name}
                     </h4>
-                    <p className="text-sm text-slate-400">
+                    <p className="text-xs xs:text-sm text-slate-400 truncate">
                       {testimonial.role} at {testimonial.company}
                     </p>
                   </div>
@@ -129,10 +129,10 @@ export default function Testimonials() {
           {/* Trust Badge */}
           <motion.div
             variants={itemVariants}
-            className="mt-16 text-center"
+            className="mt-8 xs:mt-12 sm:mt-16 text-center"
           >
-            <div className="inline-block glass rounded-full px-6 py-3">
-              <p className="text-slate-400">
+            <div className="inline-block glass rounded-full px-4 xs:px-6 py-2 xs:py-3">
+              <p className="text-slate-400 text-xs xs:text-sm sm:text-base">
                 <span className="font-bold text-secondary">40+</span> Happy clients and counting
               </p>
             </div>
